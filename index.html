@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exchange rate app">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="./dist/bundle.js" defer></script>
+</head>
+<body>
+    <div class="app">
+        <header class="app-title">Currency Calculator</header>
+        <main class="exchange-box">
+            <section class="exchange-box__currency-area currency-area currency-area--radius-first">
+                <p class="exchange-box__currency">AUD</p>
+                <img src="images/AUD.jpg" alt="an Australian dollar bill" class="currency-area__currency-image">
+                <label for="original-currency">quantity</label>
+                <input type="number" inputmode="numeric" name="original-currency" id="original-currency" class="currency-area__currency-value">
+            </section>
+            <div class="exchange-box__converter-sign converter-sign">
+                <img class="converter-sign__image" src="images/arrows.png" alt="convert">
+                <span class="converter-sign__loading converter-sign__loading--hidden">Loading</span>
+            </div>
+                <section class="exchange-box__currency-area currency-area currency-area--radius-second">
+                    <p class="exchange-box__currency">USD</p>
+                    <img src="images/USD.jpg" alt="a dollar bill" class="currency-area__currency-image">
+                    <label for="desired-currency">quantity</label>
+                    <input type="number" inputmode="numeric" name="desired-currency" disabled id="desired-currency" class="currency-area__currency-value">
+            </section>
+        </main>
+        <button class="exchange-box__change-btn">CURRENCIES</button>
+    </div>
+    <section class="modal hidden">
+        <div class="modal__wrapper">
+            <div class="modal__currency-box">
+                <p class="modal__text">Original Currency</p>
+                <select id="currency-original" class="modal__select">
+                    <option value="AUD">AUD</option>
+                    <option value="CAD">CAD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="CNY">CNY</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                    <option value="USD">USD</option>
+                </select>
+            </div>
+            <div class="modal__currency-box modal__currency-box--right">
+                <p class="modal__text">Desired Currency</p>
+                <select id="currency-desired" class="modal__select">
+                    <option value="AUD">AUD</option>
+                    <option value="CAD">CAD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="CNY">CNY</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                    <option selected value="USD">USD</option>
+                </select>
+            </div>
+        </div>
+        <button class="modal__apply">Apply</button>
+    </section>
+</body>
+</html>
